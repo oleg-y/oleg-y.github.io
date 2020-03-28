@@ -1,0 +1,12 @@
+# Редирект с http на https создан автоматически при заказе бесплатного ssl-сертификата
+AddDefaultCharset UTF-8
+#AddDefaultCharset Off
+DirectoryIndex index.php index.html
+RewriteEngine On
+# RewriteCond %{HTTP_HOST} ^pmr-perevozki.ru
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+# Конец редиректа
+
+Options -Indexes
+
